@@ -34,7 +34,7 @@ header {
   left: auto; top: auto;    
   max-width: 700px;
   width: min(92vw, 700px);
-  margin: 16px auto;
+  margin: 60px auto;
   padding: 12px;
   font-size: clamp(1rem, 2.5vw, 1.15rem);
   background: var(--surface);
@@ -138,6 +138,7 @@ a:focus-visible, #navbtn:focus-visible {
 #ll1,#ll2,#ll3,#ll4{
   color: blue;
 }
+
 
 
 
