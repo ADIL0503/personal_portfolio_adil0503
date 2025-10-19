@@ -11,6 +11,7 @@ header {
   background-color: #2563eb;
   text-align: center;
   padding: 20px 10px;
+  position: relative;
 }
 
 #name {
@@ -45,9 +46,9 @@ header {
 }
 #navbtn {
   margin: auto;
-  position: fixed;
-  top:20px;
-  left:20px;
+  position: absolute;
+  top: 45px;
+  left: 2px;
   z-index: 2001;
   font-size: 28px;
   line-height: 1;
@@ -61,7 +62,7 @@ header {
 
 #navigation {
   position: fixed;
-  top: 0; left: 0;
+  top: 30px; left: 0;
   height: 100dvh; 
   width: min(80vw, 280px);
   transform: translateX(-100%);
@@ -137,6 +138,7 @@ a:focus-visible, #navbtn:focus-visible {
 #ll1,#ll2,#ll3,#ll4{
   color: blue;
 }
+
 
 
 
