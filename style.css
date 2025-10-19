@@ -45,7 +45,10 @@ header {
 }
 #navbtn {
   margin: auto;
-  z-index: 1001;
+  position: fixed;
+  top:20px;
+  left:20px;
+  z-index: 2001;
   font-size: 28px;
   line-height: 1;
   padding: 6px 10px;
@@ -134,4 +137,8 @@ a:focus-visible, #navbtn:focus-visible {
 #ll1,#ll2,#ll3,#ll4{
   color: blue;
 }
+
+
+
+
 
