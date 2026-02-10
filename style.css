@@ -1,148 +1,138 @@
-*, *::before, *::after { box-sizing: border-box; }
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* VARIABLES */
 :root {
   --brand: #2563eb;
   --surface: #ffffff;
-  --ink: #000;
 }
 
-header { background-color: var(--brand); }
+/* HEADER */
 header {
-  background-color: #2563eb;
+  background: var(--brand);
+  color: white;
   text-align: center;
   padding: 20px 10px;
   position: relative;
 }
 
 #name {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: bold;
   margin: 0;
-  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   letter-spacing: 1px;
 }
 
 #tagline {
-  font-size: clamp(1rem, 2vw, 1.3rem);
   margin: 5px 0 0;
-  color: #f8f8f8;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   font-style: italic;
 }
 
-#about {
-  position: static;        
-  left: auto; top: auto;    
-  max-width: 700px;
-  width: min(92vw, 700px);
-  margin: 60px auto;
-  padding: 12px;
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
-  background: var(--surface);
-  border: 2px solid #030305;
-  border-radius: 10px;
-}
-#menu{
-  display: none;
-}
+/* HAMBURGER BUTTON */
 #navbtn {
   position: absolute;
-  top: 45px;
-  left: 2px;
-  z-index: 2000;
-  margin: auto;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
   font-size: 28px;
-  line-height: 1;
-  padding: 6px 10px;
-  background: #fff;
-  border: 2px solid #000;
+  background: white;
+  color: black;
+  border: 2px solid black;
   border-radius: 6px;
+  padding: 6px 10px;
   cursor: pointer;
 }
 
+/* HIDE CHECKBOX */
+#menu {
+  display: none;
+}
 
+/* SIDEBAR NAV */
 #navigation {
   position: fixed;
-  top: 30px; left: 0;
-  height: 100dvh; 
-  width: min(80vw, 280px);
-  transform: translateX(-100%);
-  transition: transform .35s ease;
-  z-index: 1000;
-  border: none;
-  background-color: #f7f3e9;
-  padding: 72px 16px 16px; 
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(75vw, 260px);
+
+  background: #f7f3e9;
+  padding: 100px 16px 16px;
+
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
-#n1, #n2, #n3, #n4 { position: static; left: auto; top: auto; }
+/* OPEN NAV */
+#menu:checked ~ #navigation {
+  transform: translateX(0);
+}
 
+/* LINKS */
 .links {
   display: block;
+  text-decoration: none;
   color: #111;
-  text-decoration: none;
+  background: #f5f0e1;
   border: 1px solid #d3cfc2;
-  font-weight: 540;
   padding: 10px 12px;
-  background-color: #f5f0e1;
   border-radius: 6px;
+  font-weight: 500;
 }
 
-#menu:checked ~ #navigation { transform: translateX(0); }
+/* MAIN CONTENT */
+main {
+  padding: 20px;
+}
 
+#about {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 14px;
+  font-size: clamp(1rem, 2.3vw, 1.15rem);
 
-#pro {
-  background-color: #ffffff;
+  background: var(--surface);
   border: 2px solid black;
-  font-size: clamp(1rem, 2.2vw, 1.05rem);
-  margin: 20px auto;     
-  width: min(92vw, 700px);
-  padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-#headingpro, #conhead, #ts {
-  background-color: var(--brand);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-}
-
-#conbar, #tsbox {
-  border: 2px solid #000;
-  width: min(92vw, 700px);
-  margin: 24px auto;
-  padding: 16px;
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
-  border-radius: 8px;
-}
-#conbar { display: flex; flex-direction: column; gap: 16px; }
-
-#pro2home, #con2home, #ts2home {
-  display: block;
-  width: fit-content;
-  margin: 28px auto;
-  border: 2px solid black;
-  padding: 8px 14px;
-  text-decoration: none;
-  color: black;
-  font-size: clamp(1rem, 2.2vw, 1.05rem);
-  border-radius: 6px;
-}
-a:focus-visible, #navbtn:focus-visible {
-  outline: 3px solid #111;
+/* ACCESSIBILITY FOCUS */
+a:focus-visible,
+#navbtn:focus-visible {
+  outline: 3px solid black;
   outline-offset: 3px;
 }
-#ll1,#ll2,#ll3,#ll4{
-  color: blue;
+
+/* ============================= */
+/* TABLET & DESKTOP IMPROVEMENT */
+/* ============================= */
+
+@media (min-width: 768px) {
+
+  #navbtn {
+    font-size: 32px;
+  }
+
+  #navigation {
+    width: 260px;
+  }
+
+  #about {
+    margin-top: 60px;
+  }
 }
-
-
-
-
-
-
-
-
